@@ -1,0 +1,3 @@
+# Ignoring the messy model-based stuff for now
+src/
+out/
