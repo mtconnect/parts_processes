@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Assets>
+  <PartDefinition assetID="" timestamp="" revisionID="">
+    <uuid />
+    <name />
+    <partNumber />
+    <description />
+    <rev />
+    <loc />
+    <unitOfMeasure>each</unitOfMeasure>
+    <processPlanRef />
+    <characteristics>
+      <rawMaterial>
+        <hardness />
+        <vendor />
+        <standard />
+        <source />
+      </rawMaterial>
+      <customers>
+        <customer>
+          <customerName />
+          <customerPartNumber />
+          <customerPONumber />
+          <customerDrawingNumber />
+        </customer>
+      </customers>
+    </characteristics>
+  </PartDefinition>
+  <PartInstance assetID="" timestamp="">
+    <uuid />
+    <partIdentifiers>
+      <uniqueIdentifier>
+        <identifier />
+        <type />
+        <timestamp />
+        <processStepRef />
+        <processStepID />
+      </uniqueIdentifier>
+      <groupIdentifier>
+        <identifier />
+        <type />
+        <timestamp />
+        <processStepRef />
+        <processStepID />
+      </groupIdentifier>
+    </partIdentifiers>
+    <quantity />
+    <partQuality />
+    <workorder />
+    <dueDate />
+    <orderDate />
+    <actualCompleteDate />
+    <processEvents>
+      <processEvent>
+        <timestamp />
+        <location />
+        <state />
+        <target />
+        <operatorID />
+        <processRef />
+        <controlProgram />
+        <assetRefs />
+        <processData>
+          <timestamp />
+          <samples />
+          <events />
+          <condition />
+        </processData>
+      </processEvent>
+    </processEvents>
+  </PartInstance>
+  <ProcessDefinition>
+    <uuid />
+    <name />
+    <nativeName />
+    <description />
+    <targets>
+      <targetDevice />
+      <targetWorkCenter />
+    </targets>
+    <processSteps>
+      <processStep>
+        <operationNumber />
+        <prerequisites />
+        <processType />
+        <processTypeID />
+      </processStep>
+    </processSteps>
+  </ProcessDefinition>
+  <ProcessInstance>
+    <uuid />
+    <ProcessDefinition />
+    <actualStartTime />
+    <actualCompleteTime />
+    <actualOperator />
+    <actualDevice />
+    <partInstanceRef />
+  </ProcessInstance>
+  <PartDefinition assetID="A1032-1" timestamp="2018-05-04T12:00:00Z " revisionID="2">
+    <uuid>y0001</uuid>
+    <name></name>
+    <partNumber>A1032-1</partNumber>
+    <description>EXTENSION PIPE 4.75” LONG </description>
+    <rev />
+    <loc />
+    <unitOfMeasure>each</unitOfMeasure>
+    <processPlanRef>x0001</processPlanRef>
+    <characteristics>
+      <rawMaterial>
+        <hardness />
+        <vendor />
+        <standard />
+        <source>BAR_STOCK</source>
+      </rawMaterial>
+      <customers>
+        <customer>
+          <customerName />
+          <customerPartNumber />
+          <customerPONumber />
+          <customerDrawingNumber />
+        </customer>
+      </customers>
+    </characteristics>
+  </PartDefinition>
+  <ProcessDefinition>
+    <uuid>x0001</uuid>
+    <name>make_A1032-1</name>
+    <nativeName />
+    <description>MAKE Extension Pipe 4.75" Long</description>
+    <processSteps>
+      <processStep>
+        <operationNumber>09</operationNumber>
+        <prerequisites />
+        <processType>SetupColdSaw</processType>
+        <processTypeID>x0002</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>10</operationNumber>
+        <prerequisites>09</prerequisites>
+        <processType>Cut</processType>
+        <processTypeID>x0003</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>19</operationNumber>
+        <prerequisites></prerequisites>
+        <processType>SetupNexus</processType>
+        <processTypeID>x0004</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>20</operationNumber>
+        <prerequisites>10,19</prerequisites>
+        <processType>BoredBallGroove</processType>
+        <processTypeID>x0005</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>29</operationNumber>
+        <prerequisites></prerequisites>
+        <processType>SetupNexus</processType>
+        <processTypeID>x0006</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>30</operationNumber>
+        <prerequisites>20,29</prerequisites>
+        <processType>Finish/Turn</processType>
+        <processTypeID>x0007</processTypeID>
+      </processStep>
+      <processStep>
+        <operationNumber>40</operationNumber>
+        <prerequisites>30</prerequisites>
+        <processType>Move</processType>
+        <processTypeID>x0008</processTypeID>
+      </processStep>
+    </processSteps>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0002</uuid>
+    <name>SetupColdSaw</name>
+    <nativeName />
+    <description>Setup 0010</description>
+    <targets>
+      <targetDevice>z020 (TSUNE High Speed Cold Saw)</targetDevice>
+      <targetWorkCenter>3011</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0003</uuid>
+    <name>Cut</name>
+    <nativeName />
+    <description>BLKS 5.8100 LONG - LJZ</description>
+    <targets>
+      <targetDevice>z020 (TSUNE High Speed Cold Saw)</targetDevice>
+      <targetWorkCenter>3011</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0004</uuid>
+    <name>SetupNEXUS</name>
+    <nativeName>Setup 0020</nativeName>
+    <description>Setup NEXUS 350-II MY</description>
+    <targets>
+      <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+      <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0005</uuid>
+    <name />
+    <nativeName>Bored Ballgroove / Drill Thru</nativeName>
+    <description>Run NEXUS 350IIMY, Bored Ballgroove / Drill Thru</description>
+    <targets>
+      <targetDevice>z375 - (NEXUS 350-II MY)</targetDevice>
+      <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0006</uuid>
+    <name>SetupNEXUS</name>
+    <nativeName>Setup 0030</nativeName>
+    <description>Setup NEXUS 350-II MY</description>
+    <targets>
+      <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+      <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0007</uuid>
+    <name />
+    <nativeName>FINISH ID/TURN OD B-GROOVE</nativeName>
+    <description>Run NEXUS 350-II MY, FINISH ID/TURN OD B-GROOVE</description>
+    <targets>
+      <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+      <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <ProcessDefinition>
+    <uuid>x0008</uuid>
+    <name>MoveToHardcoat</name>
+    <nativeName>TO HARDCOAT</nativeName>
+    <description>TO HARDCOST</description>
+    <targets>
+      <targetDevice>1</targetDevice>
+      <targetWorkCenter>9999</targetWorkCenter>
+    </targets>
+  </ProcessDefinition>
+  <PartInstance assetID="xy0001" timestamp="2009-04-06T12:00:00Z">
+    <uuid>xy0001-1</uuid>
+    <partIdentifiers>
+      <uniqueIdentifier>
+        <identifier />
+        <type />
+        <timestamp />
+        <processStepRef />
+        <processStepID />
+      </uniqueIdentifier>
+      <groupIdentifier>
+        <identifier>xx0001</identifier>
+        <type>LOT</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+      <groupIdentifier>
+        <identifier>xy0001</identifier>
+        <type>UUID</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+    </partIdentifiers>
+    <quantity>30</quantity>
+    <partQuality></partQuality>
+    <workorder>862809</workorder>
+    <dueDate>2009-04-27T12:00:00Z</dueDate>
+    <orderDate>2009-04-06T12:00:00Z</orderDate>
+    <actualCompleteDate></actualCompleteDate>
+    <processEvents>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>RAW</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>ON HOLD (MOVE)</state>
+        <target></target>
+        <operatorID>334</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0007 (op30)</processRef>
+      </processEvent>
+    </processEvents>
+  </PartInstance>
+  <PartInstance assetID="xy0001SCRAP" timestamp="2009-04-17T12:00:00Z">
+    <uuid>xy0001-2</uuid>
+    <partIdentifiers>
+      <uniqueIdentifier>
+        <identifier />
+        <type />
+        <timestamp />
+        <processStepRef />
+        <processStepID />
+      </uniqueIdentifier>
+      <groupIdentifier>
+        <identifier>xx0001</identifier>
+        <type>LOT</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+      <groupIdentifier>
+        <identifier>xy0001</identifier>
+        <type>UUID</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+      <groupIdentifier>
+        <identifier>xy0001SCRAP</identifier>
+        <type>UUID</type>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0030</processStepID>
+      </groupIdentifier>
+    </partIdentifiers>
+    <quantity>1</quantity>
+    <partQuality>BAD</partQuality>
+    <workorder>862809</workorder>
+    <dueDate>2009-04-27T12:00:00Z</dueDate>
+    <orderDate>2009-04-06T12:00:00Z</orderDate>
+    <actualCompleteDate>2009-04-17T12:00:00Z</actualCompleteDate>
+    <processEvents>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>RAW</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>ON HOLD (MOVE)</state>
+        <target></target>
+        <operatorID>334</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0007 (op30)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>SCRAP</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30)</processRef>
+      </processEvent>
+    </processEvents>
+  </PartInstance>
+  <PartInstance assetID="xy0001" timestamp="2009-04-06T12:00:00Z">
+    <uuid>xy0001-3</uuid>
+    <partIdentifiers>
+      <uniqueIdentifier>
+        <identifier />
+        <type />
+        <timestamp />
+        <processStepRef />
+        <processStepID />
+      </uniqueIdentifier>
+      <groupIdentifier>
+        <identifier>xx0001</identifier>
+        <type>LOT</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+      <groupIdentifier>
+        <identifier>xy0001</identifier>
+        <type>UUID</type>
+        <timestamp>2009-04-06T12:00:00Z</timestamp>
+        <processStepRef />
+        <processStepID>0009</processStepID>
+      </groupIdentifier>
+    </partIdentifiers>
+    <quantity>29</quantity>
+    <partQuality></partQuality>
+    <workorder>862809</workorder>
+    <dueDate>2009-04-27T12:00:00Z</dueDate>
+    <orderDate>2009-04-06T12:00:00Z</orderDate>
+    <actualCompleteDate>2009-04-20T12:00:00Z</actualCompleteDate>
+    <processEvents>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0002 (op09)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>RAW</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>IN PROCESS</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-15T12:00:00Z</timestamp>
+        <location>3011</location>
+        <state>COMPLETE</state>
+        <target>z020 (TSUNE High Speed Cold Saw)</target>
+        <operatorID>334</operatorID>
+        <processRef>x0003 (op10)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>ON HOLD (MOVE)</state>
+        <target></target>
+        <operatorID>334</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-16T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>142</operatorID>
+        <processRef>x0004 (op19)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0005 (op20)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0006 (op29)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0007 (op30-1)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>116</operatorID>
+        <processRef>x0007 (op30-2)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30-2)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30-3)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30-4)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30-5)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>IN PROCESS</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30-6)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID>339</operatorID>
+        <processRef>x0007 (op30)</processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-17T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>ON HOLD (TRANSFER)</state>
+        <target>z375 (NEXUS 350-II MY)</target>
+        <operatorID></operatorID>
+        <processRef></processRef>
+      </processEvent>
+      <processEvent>
+        <timestamp>2009-04-20T12:00:00Z</timestamp>
+        <location>1510</location>
+        <state>COMPLETE</state>
+        <target>9999</target>
+        <operatorID>73</operatorID>
+        <processRef>x0008 (op40)</processRef>
+      </processEvent>
+    </processEvents>
+  </PartInstance>
+</Assets>

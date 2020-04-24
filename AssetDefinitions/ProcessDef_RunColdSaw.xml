@@ -1,0 +1,10 @@
+<ProcessDefinition>
+<uuid>x0003</uuid>
+<processName>Cut</processName>
+<nativeName />
+<description>BLKS 5.8100 LONG - LJZ</description>
+<targets>
+    <targetDevice>z020 (TSUNE High Speed Cold Saw)</targetDevice>
+    <targetWorkCenter>3011</targetWorkCenter>
+</targets>
+</ProcessDefinition>

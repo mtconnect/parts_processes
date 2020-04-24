@@ -1,0 +1,10 @@
+<ProcessDefinition>
+    <uuid>x0005</uuid>
+    <name>boredBallgroove_Nexus350II_A1032-1</name>
+    <nativeName>Bored Ballgroove / Drill Thru</nativeName>
+    <description>Run NEXUS 350IIMY, Bored Ballgroove / Drill Thru</description>
+    <targets>
+        <targetDevice>z375 - (NEXUS 350-II MY)</targetDevice>
+        <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+</ProcessDefinition>

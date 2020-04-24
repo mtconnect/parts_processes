@@ -1,0 +1,70 @@
+<ProcessArchetype>
+    <uuid>x0002</uuid>
+    <name>SetupColdSaw</name>
+    <nativeName />
+    <description>Setup 0010</description>
+    <targets>
+        <targetDevice>z020 (TSUNE High Speed Cold Saw)</targetDevice>
+        <targetWorkCenter>3011</targetWorkCenter>
+    </targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0003</uuid>
+<name>Cut</name>
+<nativeName />
+<description>BLKS 5.8100 LONG - LJZ</description>
+<targets>
+    <targetDevice>z020 (TSUNE High Speed Cold Saw)</targetDevice>
+    <targetWorkCenter>3011</targetWorkCenter>
+</targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0004</uuid>
+<name>SetupNEXUS</name>
+<nativeName>Setup 0020</nativeName>
+<description>Setup NEXUS 350-II MY</description>
+<targets>
+    <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+    <targetWorkCenter>1510</targetWorkCenter>
+</targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0005</uuid>
+<name />
+<nativeName>Bored Ballgroove / Drill Thru</nativeName>
+<description>Run NEXUS 350IIMY, Bored Ballgroove / Drill Thru</description>
+<targets>
+    <targetDevice>z375 - (NEXUS 350-II MY)</targetDevice>
+    <targetWorkCenter>1510</targetWorkCenter>
+</targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0006</uuid>
+<name>SetupNEXUS</name>
+<nativeName>Setup 0030</nativeName>
+<description>Setup NEXUS 350-II MY</description>
+<targets>
+    <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+    <targetWorkCenter>1510</targetWorkCenter>
+</targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0007</uuid>
+<name />
+<nativeName>FINISH ID/TURN OD B-GROOVE</nativeName>
+<description>Run NEXUS 350-II MY, FINISH ID/TURN OD B-GROOVE</description>
+<targets>
+    <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+    <targetWorkCenter>1510</targetWorkCenter>
+</targets>
+</ProcessArchetype>
+<ProcessArchetype>
+<uuid>x0008</uuid>
+<name>MoveToHardcoat</name>
+<nativeName>TO HARDCOAT</nativeName>
+<description>TO HARDCOST</description>
+<targets>
+    <targetDevice>1</targetDevice>
+    <targetWorkCenter>9999</targetWorkCenter>
+</targets>
+</ProcessArchetype>

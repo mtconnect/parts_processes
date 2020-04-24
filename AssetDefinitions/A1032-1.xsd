@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PartDefinition" type="PartDefinitionType"/>
+  <xs:complexType name="RawMaterialType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Hardness"/>
+      <xs:element type="xs:string" name="Vendor"/>
+      <xs:element type="xs:string" name="Standard"/>
+      <xs:element type="xs:string" name="Source"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BillOfMaterialType">
+    <xs:sequence>
+      <xs:element type="RawMaterialType" name="RawMaterial"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CharacteristicsType">
+    <xs:sequence>
+      <xs:element type="BillOfMaterialType" name="BillOfMaterial"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerInformationType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CustomerName"/>
+      <xs:element type="xs:string" name="PartNumber"/>
+      <xs:element type="xs:string" name="DrawingNumber"/>
+      <xs:element type="xs:string" name="PONumber"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomersType">
+    <xs:sequence>
+      <xs:element type="CustomerInformationType" name="CustomerInformation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkOrderInformationType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="WorkOrderNumber"/>
+      <xs:element type="xs:string" name="OrderDate"/>
+      <xs:element type="xs:string" name="DueDate"/>
+      <xs:element type="xs:string" name="PlannedQuantity"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="processPlanRefType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="processPlanNativeName"/>
+      <xs:element type="xs:string" name="processPlanID"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartDefinitionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="partNumber"/>
+      <xs:element type="xs:string" name="uuid"/>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Description"/>
+      <xs:element type="xs:string" name="Rev"/>
+      <xs:element type="xs:string" name="UnitOfMeasure"/>
+      <xs:element type="xs:string" name="PlannedQuantity"/>
+      <xs:element type="CharacteristicsType" name="Characteristics"/>
+      <xs:element type="CustomersType" name="Customers"/>
+      <xs:element type="WorkOrderInformationType" name="WorkOrderInformation"/>
+      <xs:element type="processPlanRefType" name="processPlanRef"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="partNumber"/>
+    <xs:attribute type="xs:string" name="timestamp"/>
+    <xs:attribute type="xs:string" name="assetId"/>
+  </xs:complexType>
+</xs:schema>

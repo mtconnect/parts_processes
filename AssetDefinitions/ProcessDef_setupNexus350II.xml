@@ -1,0 +1,10 @@
+<ProcessDefinition>
+    <uuid>x0004</uuid>
+    <name>SetupNEXUS</name>
+    <nativeName>Setup 0020</nativeName>
+    <description>Setup NEXUS 350-II MY</description>
+    <targets>
+        <targetDevice>z375 (NEXUS 350-II MY)</targetDevice>
+        <targetWorkCenter>1510</targetWorkCenter>
+    </targets>
+</ProcessDefinition>

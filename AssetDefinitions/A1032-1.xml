@@ -1,0 +1,37 @@
+<PartDefinition partNumber="A1032-1" timestamp="2020-04-02T13:55:22" assetId="A1032-1.v1">
+	<partNumber>"A1032-1"</partNumber>
+	<uuid>A1032-1.v1.0</uuid>
+	<Name></Name>
+	<Description>"Extension Pipe 4.75' Long"</Description>
+	<Rev>1.0</Rev>
+	<UnitOfMeasure>EACH</UnitOfMeasure>
+	<PlannedQuantity></PlannedQuantity>
+	<Characteristics>
+		<BillOfMaterial>
+			<RawMaterial>
+				<Hardness></Hardness>
+				<Vendor></Vendor>
+				<Standard></Standard>
+				<Source></Source>
+			</RawMaterial>
+		</BillOfMaterial>
+	</Characteristics>
+	<Customers>
+		<CustomerInformation>
+			<CustomerName></CustomerName>
+			<PartNumber></PartNumber>
+			<DrawingNumber></DrawingNumber>
+			<PONumber></PONumber>
+		</CustomerInformation>
+	</Customers>
+	<WorkOrderInformation>
+		<WorkOrderNumber></WorkOrderNumber>
+		<OrderDate></OrderDate>
+		<DueDate></DueDate>
+		<PlannedQuantity></PlannedQuantity>
+	</WorkOrderInformation>
+	<processPlanRef> 
+		<processPlanNativeName>make_A1032-1</processPlanNativeName>
+		<processPlanID>x0001</processPlanID> 
+	</processPlanRef>
+</PartDefinition>

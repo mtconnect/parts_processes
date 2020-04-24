@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProcessArchetype" type="ProcessArchetypeType"/>
+  <xs:complexType name="processStepType">
+    <xs:sequence>
+      <xs:element name="operationNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="prerequisites">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="processType">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="processTypeID">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="processStepsType">
+    <xs:sequence>
+      <xs:element type="processStepType" name="processStep" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProcessArchetypeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="uuid"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="nativeName"/>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="processStepsType" name="processSteps"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

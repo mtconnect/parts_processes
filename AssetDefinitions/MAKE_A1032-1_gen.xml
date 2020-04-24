@@ -1,0 +1,15 @@
+<ProcessArchetype>
+  <uuid>string</uuid>
+  <name>string</name>
+  <nativeName>string</nativeName>
+  <description>string</description>
+  <processSteps>
+    <!--Zero or more repetitions:-->
+    <processStep>
+      <operationNumber>string</operationNumber>
+      <prerequisites>string</prerequisites>
+      <processType>string</processType>
+      <processTypeID>string</processTypeID>
+    </processStep>
+  </processSteps>
+</ProcessArchetype>
