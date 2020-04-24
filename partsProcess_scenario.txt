@@ -1,0 +1,8 @@
+curl -H "Content-Type: application/xml" -d @./AssetDefinitions/A1032-1.xml 'http://127.0.0.1:5000/asset/PARTDEF_A1032-1.v1.0?device=VMC-3Axis&type=PartDefinition'
+
+curl -H "Content-Type: application/xml" -d @./AssetDefinitions/MAKE_A1032-1.xml 'http://127.0.0.1:5000/asset/PROCDEF_make_A1032-1.v1.0?device=VMC-3Axis&type=ProcessDefinition'
+
+curl -H "Content-Type: application/xml" -d @./AssetDefinitions/ProcessDef_setupNexus350II.xml 'http://127.0.0.1:5000/asset/PROCDEF_setupNexus350II.v1.0?device=VMC-3Axis&type=ProcessDefinition'
+
+curl -H "Content-Type: application/xml" -d @./AssetDefinitions/ProcessDef_runNexus350_boredBallgroove.xml 'http://127.0.0.1:5000/asset/PROCDEF_runNexus350_boredBallgroove.v1.0?device=VMC-3Axis&type=ProcessDefinition'
+

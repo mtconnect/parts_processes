@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:mtconnect.org:MTConnectDevices:1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MTConnectDevices" type="urn:MTConnectDevicesType" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+  <xs:complexType name="HeaderType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:dateTime" name="creationTime"/>
+        <xs:attribute type="xs:string" name="sender"/>
+        <xs:attribute type="xs:int" name="instanceId"/>
+        <xs:attribute type="xs:int" name="bufferSize"/>
+        <xs:attribute type="xs:float" name="version"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DescriptionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="manufacturer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DataItemType" mixed="true">
+    <xs:sequence>
+      <xs:element name="Source" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="spindle_speed"/>
+            <xs:enumeration value="SspeedOvr"/>
+            <xs:enumeration value="path_feedrate"/>
+            <xs:enumeration value="feed_ovr"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="urn:ConstraintsType" name="Constraints" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="category" use="optional"/>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="nativeUnits" use="optional"/>
+    <xs:attribute type="xs:string" name="subType" use="optional"/>
+    <xs:attribute type="xs:string" name="units" use="optional"/>
+    <xs:attribute type="xs:string" name="subtype" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DataItemsType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemType" name="DataItem" maxOccurs="unbounded" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConstraintsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Value"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RotaryType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="LinearType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ComponentsType">
+    <xs:sequence>
+      <xs:element type="urn:RotaryType" name="Rotary" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:LinearType" name="Linear" maxOccurs="unbounded" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:PathType" name="Path" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:PartRecordType" name="PartRecord" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:ProcessRecordType" name="ProcessRecord" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:ElectricType" name="Electric" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:CoolantType" name="Coolant" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:HydraulicType" name="Hydraulic" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:AxesType" name="Axes" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:ControllerType" name="Controller" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:SystemsType" name="Systems" minOccurs="0" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AxesType">
+    <xs:sequence>
+      <xs:element type="urn:ComponentsType" name="Components" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="PathType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="PartRecordType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+  <xs:complexType name="ProcessRecordType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+    <xs:attribute type="xs:string" name="type"/>
+  </xs:complexType>
+  <xs:complexType name="ControllerType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:ComponentsType" name="Components" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="ElectricType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="CoolantType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="HydraulicType">
+    <xs:sequence>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="SystemsType">
+    <xs:sequence>
+      <xs:element type="urn:ComponentsType" name="Components" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:string" name="name"/>
+  </xs:complexType>
+  <xs:complexType name="DeviceType">
+    <xs:sequence>
+      <xs:element type="urn:DescriptionType" name="Description" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:DataItemsType" name="DataItems" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:ComponentsType" name="Components" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+    <xs:attribute type="xs:byte" name="iso841Class"/>
+    <xs:attribute type="xs:string" name="name"/>
+    <xs:attribute type="xs:byte" name="sampleInterval"/>
+    <xs:attribute type="xs:string" name="uuid"/>
+  </xs:complexType>
+  <xs:complexType name="DevicesType">
+    <xs:sequence>
+      <xs:element type="urn:DeviceType" name="Device" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MTConnectDevicesType">
+    <xs:sequence>
+      <xs:element type="urn:HeaderType" name="Header" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+      <xs:element type="urn:DevicesType" name="Devices" xmlns:urn="urn:mtconnect.org:MTConnectDevices:1.1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
