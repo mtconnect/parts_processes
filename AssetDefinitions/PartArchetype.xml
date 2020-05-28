@@ -1,8 +1,8 @@
-<PartArchetype partNumber="A1032-1" timestamp="2020-04-02T13:55:22" assetId="A1032-1.v1">
-	<PartNumber>"A1032-1"</PartNumber>
-	<uuid>A1032-1.v1.0</uuid>
+<PartArchetype partNumber="" timestamp="" assetId="">
+	<PartNumber></PartNumber>
+	<uuid></uuid>
 	<Name></Name>
-	<Description>"Extension Pipe 4.75' Long"</Description>
+	<Description></Description>
 	<Revision>1.0</Revision>
 	<UnitOfMeasure>EACH</UnitOfMeasure>
 	<Quantity subType="TARGET"></Quantity>
@@ -19,6 +19,9 @@
 	<Characteristics>
 		<BillOfMaterial>
 			<RawMaterial>
+				<Identifier></Identifier>
+				<NativeName></NativeName>
+				<Description></Description>
 				<Hardness></Hardness>
 				<Vendor></Vendor>
 				<Standard></Standard>
@@ -34,10 +37,9 @@
 			<PONumber></PONumber>
 		</CustomerSpecificInformation>
 	</Customers>
-
 	<AssetReference>
 		<source></source>
-		<assetId>x0001</assetId>
+		<assetId></assetId>
 		<assetType>PROCESS_ARCHETYPE</assetType>
 	</AssetReference>
 </PartArchetype>

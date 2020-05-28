@@ -2,7 +2,7 @@
 <MTConnectDevices xmlns:m="urn:mtconnect.org:MTConnectDevices:1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mtconnect.org:MTConnectDevices:1.1" xsi:schemaLocation="urn:mtconnect.org:MTConnectDevices:1.1 http://www.mtconnect.org/schemas/MTConnectDevices_1.1.xsd">
     <Header creationTime="2010-03-04T18:44:40+00:00" sender="localhost" instanceId="1267728234" bufferSize="131072" version="1.1"/>
     <Devices>
-        <Device id="dev" iso841Class="6" name="VMC-3Axis" sampleInterval="10" uuid="test3">
+        <Device id="dev" iso841Class="6" name="VMC-3Axis" sampleInterval="10" uuid="test_27MAY">
             <Description manufacturer="SystemInsights"/>
             <DataItems>
                 <DataItem category="EVENT" id="avail" type="AVAILABILITY"/>
@@ -83,35 +83,6 @@
                                 </DataItem>
                             </DataItems>
                         </Path>
-                        <PartRecord id="partRecord" name="partRecord" type ="PART_RECORD">
-                            <DataItems>
-                                <DataItem category="EVENT" id="partName" name="partNativeName" type="NAME"/>
-                                <DataItem category="EVENT" id="uniqueId" name="uniquePartIdentifier" type="PART_ID" subtype="UniqueIdentifierType"/>
-                                <DataItem category="EVENT" id="uniqueIdType" name="uniquePartIdentifierType" type="TypeOfUniqueIdentifier"/>
-                                <DataItem category="EVENT" id="groupId" name="groupPartIdentifier" type="PART_ID" subtype="GroupIdentifierType"/>
-                                <DataItem category="EVENT" id="groupIdType" name="groupPartIdentifierType" type="TypeOfGroupIdentifier"/>
-                                <DataItem category="EVENT" id="partDefRef" name="partDefinitionReference" type="REFERENCE" subtype="PART_DEFINITION"/>
-                                <DataItem category="EVENT" id="processExecutionRef" name="partExecutionReference" type="REFERENCE" subType="PROCESS_RECORD"/>
-                                <DataItem category="EVENT" id="qty" name="quantity" type="PART_QTY"/>
-                                <DataItem category="EVENT" id="startTime" name="partActualStartDateTime" type="PART_START_DATE" />
-                                <DataItem category="EVENT" id="completeTime" name="partActualCompleteDateTime" type="PART_COMPLETE_DATE"/>
-                                <DataItem category="EVENT" id="partProgram" name="program" type="PROGRAM"/>
-                                <DataItem category="EVENT" id="partState" name="partState" type="PROCESS_EVENT_STATE"/>
-                                <DataItem category="EVENT" id="location" name="partLocation" type="LOCATION"/>
-                            </DataItems>
-                        </PartRecord>
-                        <ProcessRecord id="procRecord" name="processRecord" type="PROCESS_RECORD">
-                            <DataItems>
-                                <DataItem category="EVENT" id="processName" name="processNativeName" type="NAME"/>
-                                <DataItem category="EVENT" id="procStartTime" name="actualStartTime" type="PROCESS_START_TIME"/>
-                                <DataItem category="EVENT" id="processCompleteTime" name="actualCompleteTime" type="PROCESS_COMPLETE_TIME"/>
-                                <DataItem category="EVENT" id="operator" name="actualOperator" type="USER"/>
-                                <DataItem category="EVENT" id="program" name="actualProgram" type="PROGRAM"/>
-                                <DataItem category="EVENT" id="assetRefs" name="assetReferences" type="REFERENCE"/>
-                                <DataItem category="EVENT" id="procDefRef" name="processDefinitionReference" type="REFERENCE" subtype="PROCESS_DEFINITION"/>
-                                <DataItem category="EVENT" id="procState" name="processState" type="PROCESS_EVENT_STATE"/>
-                            </DataItems>
-                        </ProcessRecord>
                     </Components>
                 </Controller>
                 <Systems id="systems" name="systems">
@@ -138,6 +109,48 @@
                         </Hydraulic>
                     </Components>
                 </Systems>
+                <Part id="part" name="part" type ="PART">
+                    <DataItems>
+                        <DataItem category="EVENT" id="partId" name="id" type="ID"/>
+                        <DataItem category="EVENT" id="partUuid" name="uuid" type="NMTOKEN"/>
+                        <DataItem category="EVENT" id="partName" name="name" type="STRING"/>
+                        <DataItem category="EVENT" id="part01" name="uniqueID" type="UNIQUE_IDENTIFIER"/>
+                        <DataItem category="EVENT" id="part02" name="uniqueIdType" type="TYPE_OF_UNIQUE_IDENTIFIER"/>
+                        <DataItem category="EVENT" id="part03" name="groupID" type="GROUP_IDENTIFIER"/>
+                        <DataItem category="EVENT" id="part04" name="groupIdType" type="TYPE_OF_GROUP_IDENTIFIER"/>
+                        <DataItem category="EVENT" id="partDefRef" name="partTypeRef" type="REFERENCE" subtype="PART_ARCHETYPE"/>
+                        <DataItem category="EVENT" id="partTypeId" name="partTypeId" type="ASSET_ID"/>
+                        <DataItem category="EVENT" id="procOccRef" name="process" type="REFERENCE" subType="PROCESS_OCCURRENCE"/>
+                        <DataItem category="EVENT" id="part05" name="quantity" type="PART_COUNT"/>
+                        <DataItem category="EVENT" id="part06" name="actualStartTime" type="START_PROCESS_TIME"/>
+                        <DataItem category="EVENT" id="part07" name="actualCompleteTime" type="COMPLETE_PROCESS_TIME"/>
+                        <DataItem category="EVENT" id="part08" name="state" type="PROCESS_STATE"/>
+                        <DataItem category="EVENT" id="part09" name="location" type="LOCATION"/>
+                        <DataItem category="EVENT" id="part10" name="changed" type="PART_CHANGE"/>
+                        <DataItem category="EVENT" id="part11" name="detect" type="PART_DETECT"/>
+                    </DataItems>
+                </Part>
+                <ProcessOccurrence id="procOcc" name="processOccurrence" type="PROCESS_OCCURRENCE">
+                    <DataItems>
+                        <DataItem category="EVENT" id="procId" name="id" type="ID"/>
+                        <DataItem category="EVENT" id="procUuid" name="uuid" type="NMTOKEN"/>
+                        <DataItem category="EVENT" id="procName" name="name" type="STRING"/>
+                        <DataItem category="EVENT" id="procNativeName" name="nativeName" type="STRING"/>
+                        <DataItem category="EVENT" id="proc01" name="actualStartTime" type="START_PROCESS_TIME" subType="ACTUAL"/>
+                        <DataItem category="EVENT" id="proc02" name="actualCompleteTime" type="COMPLETE_PROCESS_TIME" subType="ACTUAL"/>
+                        <DataItem category="EVENT" id="proc03" name="projectedCompleteTime" type="COMPLETE_PROCESS_TIME" subType="PROJECTED"/>
+                        <DataItem category="EVENT" id="proc04" name="actualOperator" type="OPERATOR_USER" subtype="ACTUAL"/>
+                        <DataItem category="EVENT" id="proc05" name="actualOperatorId" type="OPERATOR_ID" subtype="ACTUAL"/>
+                        <DataItem category="EVENT" id="proc06" name="actualProgram" type="CONTROL_PROGRAM" subType="ACTUAL"/>
+                        <DataItem category="EVENT" id="proc07" name="actualDevice" type="DEVICE_UUID" subType="ACTUAL"/>
+                        <DataItem category="EVENT" id="procAssetRefs" name="assetReferences" type="REFERENCE"/>
+                        <DataItem category="EVENT" id="procTypeRef" name="processTypeRef" type="ASSET_REFERENCE" subType="PROCESS_ARCHETYPE"/>
+                        <DataItem category="EVENT" id="procTypeId" name="processTypeId" type="ASSET_ID"/>
+                        <DataItem category="EVENT" id="procStepRef" name="processStepRef" type="PROCESS_STEP"/>
+                        <DataItem category="EVENT" id="procStepId" name="processStepId" type="STRING"/>
+                        <DataItem category="EVENT" id="proc08" name="state" type="PROCESS_STATE"/>
+                    </DataItems>
+                </ProcessOccurrence>
             </Components>
         </Device>
     </Devices>

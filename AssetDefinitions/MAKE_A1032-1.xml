@@ -1,9 +1,9 @@
-  <ProcessDefinition>
-    <uuid>x0001</uuid>
-    <partDefinitionRef>A1032-1.v1.0</partDefinitionRef>
-    <processName>make_A1032-1</processName>
-    <nativeName />
-    <description>MAKE Extension Pipe 4.75" Long</description>
+  <ProcessArchetype>
+    <uuid></uuid>
+    <partDefinitionRef></partDefinitionRef>
+    <processName></processName>
+    <nativeName><nativeName>
+    <description></description>
     <processSteps>
       <processStep>
         <operationNumber>09</operationNumber>
@@ -48,4 +48,4 @@
         <processTypeID>x0008</processTypeID>
       </processStep>
     </processSteps>
-  </ProcessDefinition>
+  </ProcessArchetype>
